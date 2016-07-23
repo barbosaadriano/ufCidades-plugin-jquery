@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Plugin Estados & Cidades do Brasil</title>
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"/>
+<script type="text/javascript" src="./js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="./js/ufCidades.plugin.jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#frm-teste').ufCidades();
+		$('#frm1-teste').ufCidades({
+		"captionEstados":"Lista de estados - caption personalizado",
+		"captionCidades":"Caption de lista de cidades",
+		"nomeCampoEstado":"foo",
+		"nomeCampoCidade":"bar",
+		"defaultMessageEstado":"Selecionaaaaa!!",
+		"defaultMessageCidade":"Selecionaaaaa por favor!",
+		"selectClasses":"form-control"});
+	});
+</script>
+</head>
+<body>
+	<div class="container">
+		<h1>Plugin - Estados & Cidades do Brasil</h1>
+		<br/>
+		<hr/>
+		<div class="row">
+			<div class="col-lg-6 col-md-8 col-sm-12">
+				<form id="frm-teste">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+			<h3>Como utilizar</h3>
+			<p class="text-danger">Requisitos :
+				<ul>
+					<li>jQuery</li>
+					<li><a href="./data/estados-cidades.json">Arquivo JSON com cidades e estados </a></li>
+				</ul>
+			</p>
+			<pre>
+Organização dos diretórios (recomendado)
+/index.html
+/js/jquery-X.X.X.js
+/js/ufCidades.plugin.jquery.js
+/data/estados-cidades.json
+			</pre>
+			<h3>HTML</h3>
+			<code>			
+			//Marcar elemento que servirá de container com um seletor 
+			ex.: form id="frm-teste" ou div class="foo"
+			</code>
+			<h3>JQuery</h3>
+			<code>			
+$(document).ready(function(){
+	$('#frm-teste').ufCidades();
+});
+			</code>			
+			<h3>Opções</h3>
+			<p>
+			é possível passar parametro para ufCidades(), alterando algumas opções.
+			</p>
+			<pre>
+// As opções são informadas seguindo o padrão JSON chave:valor conforme exemplo a seguir.
+// caso não seja passado o parâmetro é assumido o default.
+{
+	"urlJson":"./data/estados-cidades.json",
+	"captionEstados":"Estados",
+	"captionCidades":"Cidades",
+	"nomeCampoEstado":"estado",
+	"nomeCampoCidade":"cidade",
+	"defaultMessageEstado":"Selecione um estado!",
+	"defaultMessageCidade":"Selecione uma cidade!",
+	"selectClasses":"form-control"
+}			
+			</pre>
+			<h3>Exemplo de passagem de parâmetro</h3>
+		
+<code>
+<pre>			
+	$('#frm1-teste').ufCidades({
+		"captionEstados":"Lista de estados - caption personalizado",
+		"captionCidades":"Caption de lista de cidades",
+		"nomeCampoEstado":"foo",
+		"nomeCampoCidade":"bar",
+		"defaultMessageEstado":"Selecionaaaaa!!",
+		"defaultMessageCidade":"Selecionaaaaa por favor!",
+		"selectClasses":"form-control"});
+	});
+</pre></code>		
+	<div class="col-lg-6 col-md-8 col-sm-12">
+				<div id="frm1-teste">
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
